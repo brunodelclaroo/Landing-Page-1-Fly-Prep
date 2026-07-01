@@ -1,11 +1,11 @@
+import { Logo } from "@/components/ui/Logo";
+
 export function Footer() {
   return (
     <footer className="border-t border-white/[0.08] px-5 py-12 md:px-16">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-6 text-center md:flex-row md:items-start md:justify-between md:text-left">
         <div>
-          <p className="text-[18px] font-black tracking-[-0.02em] text-white">
-            FLY PREP
-          </p>
+          <Logo withWordmark className="justify-center text-white md:justify-start" />
           <p className="mt-1 text-[14px] text-text-secondary">
             Score isn&apos;t luck. It&apos;s method.
           </p>

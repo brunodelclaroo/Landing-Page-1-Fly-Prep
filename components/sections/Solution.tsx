@@ -2,6 +2,7 @@
 
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Card } from "@/components/ui/Card";
+import { Logo } from "@/components/ui/Logo";
 
 const scattered = ["Khan", "UWorld", "Bluebook", "Notes", "Sheets"];
 
@@ -41,8 +42,8 @@ export function Solution() {
             <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-orange-accent">
               After
             </p>
-            <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-primary to-orange-accent text-2xl font-black text-white">
-              FP
+            <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-primary to-orange-accent text-white">
+              <Logo iconClassName="h-11 w-11" />
             </div>
             <p className="text-[15px] font-semibold text-white">Fly Prep Dashboard</p>
           </Card>
