@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { ScoreChart } from "@/components/ui/ScoreChart";
+import { DashboardPreview } from "@/components/ui/DashboardPreview";
 import { MeshBackground } from "@/components/ui/MeshBackground";
 import { FloatingBadge } from "@/components/ui/FloatingBadge";
 import { Logo } from "@/components/ui/Logo";
@@ -64,7 +64,7 @@ export function Hero() {
           </motion.button>
 
           <motion.div variants={item} className="flex items-center gap-2">
-            <Logo iconClassName="h-4 w-4" className="text-orange-accent" />
+            <Logo size={16} />
             <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-orange-accent">
               Fly Prep — SAT prep, redesigned
             </p>
@@ -110,27 +110,18 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="relative flex max-h-[60vh] w-full max-w-[300px] justify-center md:max-h-none"
+          className="relative flex w-full max-w-[340px] justify-center"
         >
           <div
             aria-hidden
             className="absolute inset-0 -z-10 rounded-full bg-orange-accent/20 blur-[80px]"
           />
-          <div className="relative aspect-[9/19] w-full max-w-[280px] rounded-[42px] border border-white/10 bg-[linear-gradient(160deg,#1B307B_0%,#0A1024_70%)] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
-            <div className="flex h-full flex-col items-center justify-center rounded-[30px] border border-white/[0.06] bg-base/60 px-4">
-              <p className="text-[11px] font-medium uppercase tracking-[0.08em] text-text-secondary">
-                Fly Prep Dashboard
-              </p>
-              <div className="mt-6">
-                <ScoreChart />
-              </div>
-            </div>
-          </div>
+          <DashboardPreview />
 
-          <FloatingBadge className="hidden -left-16 top-6 md:flex" duration={4}>
+          <FloatingBadge className="hidden -left-16 top-4 md:flex" duration={4}>
             🎯 Personal study plan
           </FloatingBadge>
-          <FloatingBadge className="hidden -right-14 bottom-16 md:flex" duration={4.5} delay={0.8}>
+          <FloatingBadge className="hidden -right-14 bottom-10 md:flex" duration={4.5} delay={0.8}>
             📊 Real-time analytics
           </FloatingBadge>
         </motion.div>

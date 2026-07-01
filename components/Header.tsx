@@ -12,7 +12,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-base/70 backdrop-blur-lg">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-4 md:px-16">
-        <Logo withWordmark className="text-white" />
+        <Logo withWordmark />
         <button
           type="button"
           onClick={scrollToForm}
