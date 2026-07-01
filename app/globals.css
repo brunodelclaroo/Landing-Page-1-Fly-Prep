@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #0a1024;
+  --color-blue-primary: #1b307b;
+  --color-blue-elevated: #2a4499;
+  --color-orange-accent: #f77335;
+  --color-orange-soft: #ffb88a;
+  --color-off-white: #fafaf7;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a8bf;
+  --color-text-tertiary: #5a6280;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-mesh: mesh 60s ease-in-out infinite;
+  --animate-score-rise: score-rise 5s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.4s ease-out;
+}
+
+@keyframes mesh {
+  0%,
+  100% {
+    background-position:
+      0% 0%,
+      100% 100%;
+  }
+  50% {
+    background-position:
+      100% 50%,
+      0% 50%;
+  }
+}
+
+@keyframes score-rise {
+  0%,
+  10% {
+    transform: scaleY(var(--score-start, 0.35));
+  }
+  50%,
+  65% {
+    transform: scaleY(var(--score-end, 1));
+  }
+  100% {
+    transform: scaleY(var(--score-start, 0.35));
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-text-primary);
+}
+
+::selection {
+  background-color: var(--color-orange-accent);
+  color: var(--color-text-primary);
+}
