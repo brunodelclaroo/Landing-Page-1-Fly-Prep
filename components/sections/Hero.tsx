@@ -76,7 +76,7 @@ export function Hero() {
 
           <motion.div variants={item} className="mt-8">
             <Button variant="primary" onClick={scrollToForm}>
-              Join the founder waitlist →
+              I want early access →
             </Button>
           </motion.div>
 

@@ -145,7 +145,7 @@ export function FounderAccess() {
                   <p className="text-[13px] text-red-400">{submitError}</p>
                 )}
                 <Button type="submit" isLoading={isSubmitting} className="mt-2 w-full">
-                  Be one of the first →
+                  I want early access →
                 </Button>
                 <p className="text-center text-[12px] leading-relaxed text-text-tertiary">
                   Free to join the waitlist. Early access opens in August. We
