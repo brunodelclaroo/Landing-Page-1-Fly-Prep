@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { DashboardPreview } from "@/components/ui/DashboardPreview";
 import { MeshBackground } from "@/components/ui/MeshBackground";
-import { FloatingBadge } from "@/components/ui/FloatingBadge";
 import { Logo } from "@/components/ui/Logo";
 import { trackEvent } from "@/lib/analytics";
 
@@ -117,13 +116,6 @@ export function Hero() {
             className="absolute inset-0 -z-10 rounded-full bg-orange-accent/20 blur-[80px]"
           />
           <DashboardPreview />
-
-          <FloatingBadge className="hidden -left-16 top-4 md:flex" duration={4}>
-            🎯 Personal study plan
-          </FloatingBadge>
-          <FloatingBadge className="hidden -right-14 bottom-10 md:flex" duration={4.5} delay={0.8}>
-            📊 Real-time analytics
-          </FloatingBadge>
         </motion.div>
       </div>
 
