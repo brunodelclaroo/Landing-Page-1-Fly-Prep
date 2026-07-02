@@ -24,7 +24,7 @@ const faqs = [
     id: "cost",
     question: "What does Fly Prep cost?",
     answer:
-      "Founder members get 40% off for life. Regular pricing announced at launch. Free to join the waitlist.",
+      "Pricing hasn't been announced yet. Founder members get priority access before public launch and a say in what we build first. Free to join the waitlist.",
   },
   {
     id: "closes",

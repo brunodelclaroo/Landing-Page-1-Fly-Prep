@@ -53,15 +53,6 @@ export function Hero() {
           animate="show"
           className="flex max-w-xl flex-col items-center text-center md:items-start md:text-left"
         >
-          <motion.button
-            variants={item}
-            type="button"
-            onClick={scrollToForm}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-accent/30 bg-orange-accent/10 px-4 py-1.5 text-[12px] font-semibold text-orange-soft transition-colors hover:border-orange-accent/60"
-          >
-            🔥 Founder access open — 40% off for life
-          </motion.button>
-
           <motion.div variants={item} className="flex items-center gap-2">
             <Logo size={16} />
             <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-orange-accent">

@@ -14,7 +14,12 @@ export function Footer() {
           </p>
         </div>
         <div className="flex flex-col gap-2 text-[14px] text-text-secondary md:items-end">
-          <a href="#" className="hover:text-orange-accent">
+          <a
+            href="https://www.instagram.com/flyprepacademy?igsh=MWJxeXFtcWp5OGY5eA%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-orange-accent"
+          >
             Instagram
           </a>
           <a href="mailto:hello@flyprep.com" className="hover:text-orange-accent">

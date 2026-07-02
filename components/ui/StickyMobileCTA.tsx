@@ -39,7 +39,7 @@ export function StickyMobileCTA() {
             onClick={handleClick}
             className="flex min-h-11 w-full items-center justify-center rounded-full bg-gradient-to-r from-orange-accent to-[#FF8B4A] px-6 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(247,115,53,0.4)] active:scale-[0.98]"
           >
-            Get founder access →
+            Be one of the first →
           </button>
         </motion.div>
       )}

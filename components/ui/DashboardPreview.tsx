@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 
 const MIN_SCORE = 1180;
-const MAX_SCORE = 1500;
+const MAX_SCORE = 1580;
 const READING_MIN = 560;
-const READING_MAX = 760;
+const READING_MAX = 800;
 const MATH_MIN = 480;
-const MATH_MAX = 740;
+const MATH_MAX = 780;
 const SCALE_MAX = 800;
 
 const bars = [
@@ -96,7 +96,7 @@ export function DashboardPreview() {
           Projected SAT score
         </p>
         <span className="rounded-full bg-orange-accent/15 px-2.5 py-1 text-[11px] font-bold text-orange-soft">
-          ▲ +320
+          ▲ +400
         </span>
       </div>
 

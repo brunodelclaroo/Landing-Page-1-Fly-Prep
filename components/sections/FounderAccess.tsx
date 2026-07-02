@@ -1,29 +1,20 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
 import { FormField } from "@/components/ui/FormField";
-import { LiveCounter } from "@/components/ui/LiveCounter";
 import { waitlistSchema, type WaitlistInput } from "@/lib/schemas";
 import { formatBrazilianWhatsapp } from "@/lib/phone-mask";
 import { trackEvent } from "@/lib/analytics";
 
 export function FounderAccess() {
-  const [counter, setCounter] = useState({ taken: 37, total: 100 });
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [successName, setSuccessName] = useState<string | null>(null);
   const hasStartedRef = useRef(false);
-
-  useEffect(() => {
-    fetch("/api/counter")
-      .then((res) => res.json())
-      .then((data) => setCounter({ taken: data.taken, total: data.total }))
-      .catch(() => {});
-  }, []);
 
   const {
     register,
@@ -57,7 +48,6 @@ export function FounderAccess() {
       }
 
       trackEvent("form_submit_success");
-      setCounter((c) => ({ ...c, taken: c.total - data.spotsRemaining }));
       setSuccessName(values.firstName);
     } catch (err) {
       trackEvent("form_submit_error");
@@ -78,18 +68,23 @@ export function FounderAccess() {
         <div className="mx-auto mt-6 max-w-md text-left text-[15px] leading-relaxed text-text-secondary">
           <p>The first 100 founder members get:</p>
           <ul className="mt-3 space-y-2">
-            <li>→ 40% off for life</li>
+            <li>→ Priority access before public launch</li>
             <li>→ Direct WhatsApp updates</li>
             <li>→ Vote on features before they ship</li>
             <li>→ Access as each tool launches (not all at once)</li>
           </ul>
           <p className="mt-4 text-white">
-            Once the 100 are in, founder pricing closes. Forever.
+            Once the first 100 are in, early access closes. Forever.
           </p>
         </div>
 
-        <div className="mx-auto mt-8 flex justify-center">
-          <LiveCounter taken={counter.taken} total={counter.total} />
+        <div className="mx-auto mt-8 flex max-w-sm items-center gap-3 rounded-2xl border border-orange-accent/30 bg-orange-accent/10 px-5 py-4 text-left">
+          <span className="text-xl" aria-hidden>
+            ⚡
+          </span>
+          <p className="text-[14px] font-medium text-orange-soft">
+            Founder spots are limited — secure yours before they&apos;re gone.
+          </p>
         </div>
 
         <div className="mx-auto mt-8 max-w-sm">
@@ -150,11 +145,11 @@ export function FounderAccess() {
                   <p className="text-[13px] text-red-400">{submitError}</p>
                 )}
                 <Button type="submit" isLoading={isSubmitting} className="mt-2 w-full">
-                  Get founder access →
+                  Be one of the first →
                 </Button>
                 <p className="text-center text-[12px] leading-relaxed text-text-tertiary">
-                  Free to join the waitlist. Founder pricing offered when platform
-                  opens (August). We only send updates via WhatsApp — no spam.
+                  Free to join the waitlist. Early access opens in August. We
+                  only send updates via WhatsApp — no spam.
                 </p>
               </motion.form>
             )}
