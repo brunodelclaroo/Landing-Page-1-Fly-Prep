@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { waitlistSchema } from "@/lib/schemas";
-import { getSupabaseAdmin, FOUNDER_SPOTS_TOTAL } from "@/lib/supabase";
+import { getSupabaseClient } from "@/lib/supabase";
 import { notifyNewLead } from "@/lib/resend";
 import { checkRateLimit } from "@/lib/rate-limit";
 
@@ -28,29 +28,20 @@ export async function POST(req: NextRequest) {
   const { firstName, whatsapp } = parsed.data;
 
   try {
-    const supabase = getSupabaseAdmin();
+    const supabase = getSupabaseClient();
 
     const { error: insertError } = await supabase.from("leads").insert({
       first_name: firstName,
       whatsapp,
-      source: "landing",
     });
 
     if (insertError) {
       throw insertError;
     }
 
-    const { count } = await supabase
-      .from("leads")
-      .select("id", { count: "exact", head: true });
-
     notifyNewLead(firstName, whatsapp).catch(() => {});
 
-    const taken = count ?? 0;
-    return NextResponse.json({
-      success: true,
-      spotsRemaining: Math.max(FOUNDER_SPOTS_TOTAL - taken, 0),
-    });
+    return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json(
       { success: false, error: "Something went wrong. Please try again." },
