@@ -27,22 +27,38 @@ export async function POST(req: NextRequest) {
 
   const { firstName, whatsapp } = parsed.data;
 
+  console.log("[waitlist] SUPABASE_URL:", process.env.SUPABASE_URL ?? "(not set)");
+  console.log(
+    "[waitlist] SUPABASE_ANON_KEY (first 10 chars):",
+    process.env.SUPABASE_ANON_KEY ? process.env.SUPABASE_ANON_KEY.slice(0, 10) : "(not set)",
+  );
+  console.log("[waitlist] payload:", { firstName, whatsapp });
+
   try {
     const supabase = getSupabaseClient();
 
-    const { error: insertError } = await supabase.from("leads").insert({
-      first_name: firstName,
-      whatsapp,
+    const { data, error, status, statusText } = await supabase
+      .from("leads")
+      .insert({ first_name: firstName, whatsapp });
+
+    console.log("[waitlist] Supabase response:", {
+      data,
+      error,
+      status,
+      statusText,
     });
 
-    if (insertError) {
-      throw insertError;
+    if (error) {
+      throw error;
     }
 
-    notifyNewLead(firstName, whatsapp).catch(() => {});
+    notifyNewLead(firstName, whatsapp).catch((err) => {
+      console.error("[waitlist] notifyNewLead failed:", err);
+    });
 
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (err) {
+    console.error("[waitlist] caught error:", err);
     return NextResponse.json(
       { success: false, error: "Something went wrong. Please try again." },
       { status: 500 },
