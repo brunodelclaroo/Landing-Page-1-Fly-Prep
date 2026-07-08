@@ -74,14 +74,27 @@ export function Hero() {
             Verified content. AI tutor. Real analytics. One platform. One method.
           </motion.p>
 
-          <motion.div variants={item} className="mt-8">
+          <motion.div
+            variants={item}
+            className="mt-8 inline-flex items-center gap-2 rounded-full border border-orange-accent/30 bg-orange-accent/10 px-4 py-2"
+          >
+            <span className="text-[13px] font-semibold text-orange-soft">
+              Founder Access
+            </span>
+            <span className="h-1 w-1 rounded-full bg-orange-accent/60" aria-hidden />
+            <span className="text-[13px] text-text-secondary">
+              Early access + 30% off for life — first 100 only
+            </span>
+          </motion.div>
+
+          <motion.div variants={item} className="mt-6">
             <Button variant="primary" onClick={scrollToForm}>
-              I want early access →
+              Claim Founder Access →
             </Button>
           </motion.div>
 
           <motion.p variants={item} className="mt-4 text-[13px] text-text-tertiary">
-            Free. No credit card. WhatsApp updates.
+            Free to apply. No credit card. Only 100 founder spots available.
           </motion.p>
 
           <motion.div variants={item} className="mt-8 flex flex-wrap justify-center gap-2 md:justify-start">

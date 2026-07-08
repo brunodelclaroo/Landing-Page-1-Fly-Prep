@@ -18,7 +18,7 @@ export function Header() {
           onClick={scrollToForm}
           className="hidden items-center rounded-full border border-white/20 px-5 py-2 text-[13px] font-semibold text-white transition-colors hover:border-orange-accent md:inline-flex"
         >
-          I want early access
+          Join Founder Access
         </button>
       </div>
     </header>

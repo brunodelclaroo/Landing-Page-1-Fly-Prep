@@ -65,16 +65,22 @@ export function FounderAccess() {
           Get in before everyone else.
         </h2>
 
+        <p className="mx-auto mt-4 max-w-md text-[16px] leading-relaxed text-text-secondary">
+          Founder Access isn&apos;t just a waitlist. It&apos;s early access to
+          Fly Prep and a <span className="text-white">30% lifetime discount</span>{" "}
+          for the first 100 members.
+        </p>
+
         <div className="mx-auto mt-6 max-w-md text-left text-[15px] leading-relaxed text-text-secondary">
           <p>The first 100 founder members get:</p>
           <ul className="mt-3 space-y-2">
+            <li>→ 30% lifetime discount when Fly Prep launches</li>
             <li>→ Priority access before public launch</li>
-            <li>→ Direct WhatsApp updates</li>
             <li>→ Vote on features before they ship</li>
             <li>→ Access as each tool launches (not all at once)</li>
           </ul>
           <p className="mt-4 text-white">
-            Once the first 100 are in, early access closes. Forever.
+            Once the first 100 are in, the lifetime discount closes. Forever.
           </p>
         </div>
 
@@ -83,7 +89,7 @@ export function FounderAccess() {
             ⚡
           </span>
           <p className="text-[14px] font-medium text-orange-soft">
-            Founder spots are limited — secure yours before they&apos;re gone.
+            Only the first 100 founder members unlock the 30% lifetime discount.
           </p>
         </div>
 
@@ -106,8 +112,11 @@ export function FounderAccess() {
                   ✓
                 </motion.div>
                 <p className="text-[17px] font-semibold text-white">
-                  Welcome, {successName}. We&apos;ll be in touch on WhatsApp within
-                  48h.
+                  You&apos;re on the Founder Access list, {successName}.
+                </p>
+                <p className="text-[15px] leading-relaxed text-text-secondary">
+                  If selected for Wave 1, you&apos;ll get early access + 30%
+                  off for life. We&apos;ll be in touch on WhatsApp within 48h.
                 </p>
               </motion.div>
             ) : (
@@ -145,11 +154,11 @@ export function FounderAccess() {
                   <p className="text-[13px] text-red-400">{submitError}</p>
                 )}
                 <Button type="submit" isLoading={isSubmitting} className="mt-2 w-full">
-                  I want early access →
+                  Claim Founder Access →
                 </Button>
                 <p className="text-center text-[12px] leading-relaxed text-text-tertiary">
-                  Free to join the waitlist. Early access opens in August. We
-                  only send updates via WhatsApp — no spam.
+                  Free to join Founder Access. Early access opens in August.
+                  We only send updates via WhatsApp — no spam.
                 </p>
               </motion.form>
             )}

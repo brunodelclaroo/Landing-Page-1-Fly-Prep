@@ -9,6 +9,12 @@ const faqs = [
       "We're in active build. Founder members will get access to each tool as it launches, starting August 2026. You'll be the first in.",
   },
   {
+    id: "founder-access",
+    question: "What does Founder Access include?",
+    answer:
+      "Founder Access gives the first 100 members early access to Fly Prep and a 30% lifetime discount when pricing goes live. Once those 100 spots are filled, this offer is gone for good.",
+  },
+  {
     id: "khan",
     question: "How is this different from Khan Academy?",
     answer:
@@ -24,12 +30,13 @@ const faqs = [
     id: "cost",
     question: "What does Fly Prep cost?",
     answer:
-      "Pricing hasn't been announced yet. Founder members get priority access before public launch and a say in what we build first. Free to join the waitlist.",
+      "Pricing hasn't been announced yet. Founder members get priority access before public launch, a say in what we build first, and the first 100 lock in 30% off for life. Free to join Founder Access.",
   },
   {
     id: "closes",
     question: "When does founder access close?",
-    answer: "When 100 members join.",
+    answer:
+      "When 100 members join — and with it, the 30% lifetime discount.",
   },
 ];
 

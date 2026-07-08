@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Fly Prep — The SAT platform built for 1500+",
   description:
-    "Verified content. AI tutor. Real analytics. Join the founder waitlist. First 100 members get 40% off for life.",
+    "Verified content. AI tutor. Real analytics. Join Founder Access — early access + 30% off for life for the first 100 members.",
   openGraph: {
     title: "Fly Prep — The SAT platform built for 1500+",
     description:
-      "Verified content. AI tutor. Real analytics. Join the founder waitlist. First 100 members get 40% off for life.",
+      "Verified content. AI tutor. Real analytics. Join Founder Access — early access + 30% off for life for the first 100 members.",
     url: siteUrl,
     siteName: "Fly Prep",
     locale: "en_US",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fly Prep — The SAT platform built for 1500+",
     description:
-      "Verified content. AI tutor. Real analytics. Join the founder waitlist.",
+      "Verified content. AI tutor. Real analytics. Join Founder Access — early access + 30% off for life.",
   },
   robots: {
     index: true,
